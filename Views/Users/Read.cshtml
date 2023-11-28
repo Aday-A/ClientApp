@@ -1,0 +1,47 @@
+@{
+    ViewData["Title"] = "Read";
+}
+
+<body>
+<h2>Registered Clients</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <a asp-area="" asp-controller="Users" asp-action="Create" class="btn btn-success">Create New Clients</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>User</td>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                    <td>Username</td>
+                    <td>Gender</td>
+                    <td>Country</td>
+                    <td>Telephone</td>
+                    <td>Email</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Model)
+                {
+                    <tr>
+                        <td>@item.ID</td>
+                        <td>@item.FirstName</td>
+                        <td>@item.LastName</td>
+                        <td>@item.UserName</td>
+                        <td>@item.GenderID</td>
+                        <td>@item.CountryID</td>
+                        <td>@item.Telephone</td>
+                        <td>@item.Email</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>

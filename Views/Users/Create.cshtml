@@ -1,0 +1,82 @@
+@{
+    ViewData["Title"] = "Create";
+
+    var countries = ViewData["Countries"] as List<CountryModel>;
+    var GetGender = ViewData["Genders"] as List<GenderModel>;
+}
+
+<div>
+    <div class="container">
+        <h2 class="text-center">Create New Client</h2>
+        <p>&nbsp;</p>
+
+
+        <div class="col-sm d-flex justify-content-center">
+            <div class="row col-sm-6">
+                <form id="NewClientForm" method="post" asp-controller="Users" asp-action="Create">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <label for="userFirstName" class="control-label">First Name</label>
+                        <div class="">
+                            <input type="text" class="form-control" id="firstName" name="FirstName" />                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="userLastName" class="control-label">Last Name</label>
+                        <div>
+                            <input type="text" class="form-control" id="lastName" name="LastName"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="userUsername" class="control-label">Username</label>
+                        <div class="">
+                            <input type="text" class="form-control" id="Username" name="Username" />
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <label for="userGender">Gender</label>
+                        <div class="">
+                        <select class="form-control" id="userGender" name="GenderID">
+                        <option> - Please select gender - </option>
+                         @foreach(GenderModel gender in GetGender)
+                        {
+                            <option value="@gender.ID">@gender.Gender</option>
+                        }
+                        </div>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="userCountries">Country</label>
+                        <div class="">
+                        <select class="form-control" id="userCountries" name="CountryID">
+                        <option> - Please select a country - </option>
+                        @foreach(CountryModel country in countries)
+                        {
+                            <option value="@country.ID">@country.Name</option>
+                        }
+                        </div>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="userTelephone" class="control-label">Telephone</label>
+                        <div>
+                            <input type="text" class="form-control" id="phone" name="Telephone" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="userEmail" class="control-label">Email</label>
+                        <div>
+                            <input type="email" class="form-control" id="email" name="Email"/>
+                        </div>
+                    </div>
+                    <div></div>
+                    <p>&nbsp;</p>
+                    <div class="form-group d-flex justify-content-center">
+                        <button type="submit" class="btn btn-success" id="Submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
