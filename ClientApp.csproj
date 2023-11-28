@@ -13,5 +13,7 @@
     <PackageReference Include="BootstrapIcons.AspNetCore" Version="1.9.2"/>
     <PackageReference Include="SuperAbp.AspNetCore.Mvc.UI.Packages.BootstrapIcons" Version="0.4.0"/>
     <PackageReference Include="FontAwesomeIcons" Version="1.0.3"/>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Core" Version="2.2.0"/>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.13"/>
   </ItemGroup>
 </Project>

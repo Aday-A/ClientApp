@@ -86,3 +86,4 @@ C:\Users\adesuwaaghahowa\Documents\Project 2\ClientApp\bin\Debug\net8.0\System.L
 C:\Users\adesuwaaghahowa\Documents\Project 2\ClientApp\bin\Debug\net8.0\Volo.Abp.AspNetCore.Mvc.UI.Bundling.Abstractions.dll
 C:\Users\adesuwaaghahowa\Documents\Project 2\ClientApp\bin\Debug\net8.0\Volo.Abp.Core.dll
 C:\Users\adesuwaaghahowa\Documents\Project 2\ClientApp\bin\Debug\net8.0\FontAwesomeIcons.dll
+C:\Users\adesuwaaghahowa\Documents\Project 2\ClientApp\obj\Debug\net8.0\ClientApp.sourcelink.json
