@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "OdUoQgCtyxOt9JZY9F6ggQk6mqhXXjdEdBCA3JDmIX2wwc3bOycC9He5OTZHS71oyJ6pl8NZboJSGoTGDhHRNg==",
+  "dgSpecHash": "tuOpEyNNKcu6RsVnwVhWzyFjSgV5/Kc3QbsTPYJN9XfjUnH4xbP3dK2NM4bvboWIUZX/veOMuavtFEOHbIqHxQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\adesuwaaghahowa\\Documents\\Project 2\\ClientApp\\ClientApp.csproj",
   "expectedPackageFiles": [
@@ -9,7 +9,6 @@
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\bootstrap\\3.4.1\\bootstrap.3.4.1.nupkg.sha512",
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\bootstrap.v3.datetimepicker.css\\4.17.49\\bootstrap.v3.datetimepicker.css.4.17.49.nupkg.sha512",
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\bootstrapicons.aspnetcore\\1.9.2\\bootstrapicons.aspnetcore.1.9.2.nupkg.sha512",
-    "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\fontawesomeicons\\1.0.3\\fontawesomeicons.1.0.3.nupkg.sha512",
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\jetbrains.annotations\\2022.1.0\\jetbrains.annotations.2022.1.0.nupkg.sha512",
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\jquery\\1.9.1\\jquery.1.9.1.nupkg.sha512",
@@ -78,7 +77,7 @@
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
-    "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\moment.js\\2.9.0\\moment.js.2.9.0.nupkg.sha512",
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\nito.asyncex.context\\5.1.2\\nito.asyncex.context.5.1.2.nupkg.sha512",
@@ -91,10 +90,14 @@
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.collections.immutable\\7.0.0\\system.collections.immutable.7.0.0.nupkg.sha512",
-    "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.1\\system.configuration.configurationmanager.6.0.1.nupkg.sha512",
+    "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.configuration.configurationmanager\\7.0.0\\system.configuration.configurationmanager.7.0.0.nupkg.sha512",
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.diagnostics.debug\\4.3.0\\system.diagnostics.debug.4.3.0.nupkg.sha512",
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
-    "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
+    "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.diagnostics.eventlog\\7.0.0\\system.diagnostics.eventlog.7.0.0.nupkg.sha512",
+    "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.directoryservices\\7.0.1\\system.directoryservices.7.0.1.nupkg.sha512",
+    "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.directoryservices.accountmanagement\\7.0.1\\system.directoryservices.accountmanagement.7.0.1.nupkg.sha512",
+    "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.directoryservices.protocols\\7.0.1\\system.directoryservices.protocols.7.0.1.nupkg.sha512",
+    "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512",
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.formats.asn1\\5.0.0\\system.formats.asn1.5.0.0.nupkg.sha512",
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.globalization\\4.3.0\\system.globalization.4.3.0.nupkg.sha512",
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.24.0\\system.identitymodel.tokens.jwt.6.24.0.nupkg.sha512",
@@ -120,10 +123,9 @@
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.runtime.extensions\\4.3.0\\system.runtime.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.runtime.loader\\4.3.0\\system.runtime.loader.4.3.0.nupkg.sha512",
-    "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.security.accesscontrol\\6.0.0\\system.security.accesscontrol.6.0.0.nupkg.sha512",
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.security.cryptography.cng\\5.0.0\\system.security.cryptography.cng.5.0.0.nupkg.sha512",
-    "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.security.cryptography.protecteddata\\6.0.0\\system.security.cryptography.protecteddata.6.0.0.nupkg.sha512",
-    "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.security.permissions\\6.0.0\\system.security.permissions.6.0.0.nupkg.sha512",
+    "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.security.cryptography.protecteddata\\7.0.0\\system.security.cryptography.protecteddata.7.0.0.nupkg.sha512",
+    "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.security.permissions\\7.0.0\\system.security.permissions.7.0.0.nupkg.sha512",
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.text.encoding.codepages\\6.0.0\\system.text.encoding.codepages.6.0.0.nupkg.sha512",
@@ -132,20 +134,9 @@
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.threading\\4.3.0\\system.threading.4.3.0.nupkg.sha512",
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
+    "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512",
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\volo.abp.aspnetcore.mvc.ui.bundling.abstractions\\7.4.0\\volo.abp.aspnetcore.mvc.ui.bundling.abstractions.7.4.0.nupkg.sha512",
     "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\volo.abp.core\\7.4.0\\volo.abp.core.7.4.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'FontAwesomeIcons 1.0.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "libraryId": "FontAwesomeIcons",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }

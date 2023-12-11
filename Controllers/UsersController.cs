@@ -42,7 +42,7 @@ public class UsersController : Controller
             .ToList();
 
         ViewBag.Query = "";
-        
+
         return View(users);
     }
 
@@ -68,7 +68,8 @@ public class UsersController : Controller
             return View(model);
         }
 
-        UserModel user = new(){
+        UserModel user = new()
+        {
             FirstName = model.FirstName,
             LastName = model.LastName,
             GenderID = model.GenderID,
@@ -97,58 +98,82 @@ public class UsersController : Controller
     }
 
 
-    //Update: enable easy editing
-    public ActionResult Update(int ID)
+    //GET: Display edit value
+    public ActionResult Edit(int? ID)
     {
-        var data = _applicationDbContext.Users.Where(x => x.ID == ID).SingleOrDefault();
+        
+        GetGender();
+        List<Models.CountryModel>? countries = _applicationDbContext.Countries.ToList();
+        ViewBag.Countries = countries;
+        
+        
+        if (ID == null)
+        {
+            return Problem("Entity set is null.");
+        }
+        var details = _applicationDbContext.Users.FirstOrDefault(x => x.ID == ID);
+        if (details == null)
+        {
+            return Problem("Entity set is null.");
+        }
+        return View(details);
+
+        
+    }
+
+    //POST: Edit details & update DB
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public ActionResult Edit([Bind(include: "ID,FirstName,LastName,Username,GenderID,CountryID,Telephone,Email")] UserDetailRequest model)
+    {
+        
+        GetGender();
+        List<Models.CountryModel>? countries = _applicationDbContext.Countries.ToList();
+        ViewBag.Countries = countries;
+        
+        if (ModelState.IsValid)
+        {
+            _applicationDbContext.Entry(model).State = EntityState.Modified;
+            _applicationDbContext.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        return View(model);
+    }
+
+    public ActionResult Delete(int? ID)
+    {
+        GetGender();
+        List<Models.CountryModel>? countries = _applicationDbContext.Countries.ToList();
+        ViewBag.Countries = countries;
+        
+        if (ID == null)
+        {
+            return Problem("Entity set is null.");
+        }
+
+        var data = _applicationDbContext.Users.Find(ID);
+
+        if (data == null)
+        {
+            return NotFound();
+        }
+
         return View(data);
     }
 
-    //Update: User
-    [HttpPost]
+    /*
+    [HttpPost, ActionName("Delete")]
     [ValidateAntiForgeryToken]
 
-    public ActionResult Update(int ID, UserModel model)
+    public ActionResult DeleteConfirmed (int ID)
     {
-        var data = _applicationDbContext.Users.FirstOrDefault(x => x.ID == ID);
-
-        if (data != null)
-        {
-            data.FirstName = model.FirstName;
-            _applicationDbContext.SaveChanges();
-
-            return RedirectToAction("Read");
-        }
-        else
-        {
-            return View();
-        }
-    }
-
-    public ActionResult Delete()
-    {
-        return View();
-    }
-
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-
-    public ActionResult Delete(int ID)
-    {
-
-        var data = _applicationDbContext.Users.FirstOrDefault(x => x.ID == ID);
-        if (data != null)
-        {
+       var data = _applicationDbContext.Users.Find(ID);
             _applicationDbContext.Users.Remove(data);
             _applicationDbContext.SaveChanges();
-
-            return RedirectToAction("Read");
-        }
-        else
-        {
-            return View();
-        }
+            return RedirectToAction("Index");
     }
+    */
+
 
     public void GetGender()
     {
@@ -202,8 +227,5 @@ public class UsersController : Controller
     {
         return "From [HttpPost]Index: filter on " + UserName;
     }
-
-
-
 
 }

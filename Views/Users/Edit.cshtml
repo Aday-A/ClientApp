@@ -1,0 +1,78 @@
+
+
+
+@{
+   ViewData["Title"] = "Edit";
+
+   var countries = ViewData["Countries"] as List<CountryModel>;
+   var GetGender = ViewData["Genders"] as List<GenderModel>;
+}
+
+
+<div>
+    <div class="container py-4 px-4">
+        <div class="row d-flex justify-content-center">
+            <div class=" row col-12 border border-dark-subtle shadow px-4 py-5 mb-5 bg-body-tertiary rounded">
+               <div>
+                  <form asp-controller="Users" asp-action="Edit" method="post"  >
+                        <legend>Update Client Information</legend>
+
+                        <div class="form-group">
+                           <label class="" for="FirstName">First Name</label>
+                           <div class="">
+                              <input class="form-control" id="FirstName" name="FirstName" type="text" value="@Model.FirstName" />
+                           </div>
+                        </div>
+
+                        <div class="form-group">
+                           <label class="" for="LastName">Last Name</label>
+                           <div class="">
+                              <input class="form-control" id="LastName" name="LastName" type="text" value="@Model.LastName" />
+                           </div>
+                        </div>
+
+                        <div class="form-group">
+                           <label class="" for="Username">Username</label>
+                           <div class="">
+                              <input class="form-control" id="Username" name="Username" type="text" value="@Model.UserName" />
+                           </div>
+                        </div>
+
+                        <div class="form-group">
+                           <label class="" for="GenderID">Gender</label>
+                           <div class="">
+                              <input class="form-control" id="GenderID" name="GenderID" type="text" value="@Model.Gender.Gender" readonly /> 
+                              <small style="color: tomato;">*This cannot be changed.</small>
+                           </div>
+                        </div>
+
+                        <div class="form-group">
+                           <label class="" for="CountryID">Country</label>
+                           <div class="">
+                              <input class="form-control" id="Country" name="Country" type="text" value="@Model.Country.Name" />
+                           </div>
+                        </div>
+
+                        <div class="form-group">
+                           <label class="" for="Telephone">Telephone</label>
+                           <div class="">
+                              <input class="form-control" id="Telephone" name="Telephone" type="text" value="@Model.Telephone" />
+                           </div>
+                        </div>
+
+                        <div class="form-group">
+                           <label class="" for="Email">Email</label>
+                           <div class="">
+                              <input class="form-control" id="Email" name="Email" type="text" value="@Model.Email" />
+                           </div>
+                        </div>
+
+                        <div class="py-3" >
+                           <input type="submit" value="Save" class="btn btn-primary" />
+                        </div>
+                  </form>
+               </div>
+            </div>
+        </div>
+    </div>
+</div> 

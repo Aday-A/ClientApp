@@ -1,0 +1,12 @@
+using Microsoft.Identity.Client;
+
+namespace ClientApp.Models;
+
+public class LoginModel 
+{
+    public string username { get; set; }
+
+    public string password { get; set; }
+
+
+}

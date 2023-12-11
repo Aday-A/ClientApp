@@ -12,8 +12,9 @@
     <PackageReference Include="Bootstrap.v3.Datetimepicker.CSS" Version="4.17.49"/>
     <PackageReference Include="BootstrapIcons.AspNetCore" Version="1.9.2"/>
     <PackageReference Include="SuperAbp.AspNetCore.Mvc.UI.Packages.BootstrapIcons" Version="0.4.0"/>
-    <PackageReference Include="FontAwesomeIcons" Version="1.0.3"/>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Core" Version="2.2.0"/>
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.13"/>
+    <PackageReference Include="System.DirectoryServices.AccountManagement" Version="7.0.1"/>
+    <PackageReference Include="System.DirectoryServices" Version="7.0.1"/>
   </ItemGroup>
 </Project>
