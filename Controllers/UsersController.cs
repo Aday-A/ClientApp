@@ -99,80 +99,131 @@ public class UsersController : Controller
 
 
     //GET: Display edit value
-    public ActionResult Edit(int? ID)
+    public async Task<IActionResult> Edit(int? ID)
     {
-        
         GetGender();
         List<Models.CountryModel>? countries = _applicationDbContext.Countries.ToList();
         ViewBag.Countries = countries;
-        
-        
+
+
         if (ID == null)
         {
             return Problem("Entity set is null.");
         }
-        var details = _applicationDbContext.Users.FirstOrDefault(x => x.ID == ID);
+        var details = await _applicationDbContext.Users.Include(x => x.Country).Include(x=>x.Gender).FirstOrDefaultAsync(x => x.ID == ID);
         if (details == null)
         {
             return Problem("Entity set is null.");
         }
         return View(details);
-
-        
     }
 
     //POST: Edit details & update DB
-    [HttpPost]
+    [HttpPost, ActionName("EditConfirmed")]
     [ValidateAntiForgeryToken]
-    public ActionResult Edit([Bind(include: "ID,FirstName,LastName,Username,GenderID,CountryID,Telephone,Email")] UserDetailRequest model)
+    public async Task<IActionResult> EditConfirmed(
+        int ID,
+        [Bind(include: "ID,FirstName,LastName,UserName,GenderID,CountryID,Telephone,Email")] UserModel model)
     {
-        
-        GetGender();
-        List<Models.CountryModel>? countries = _applicationDbContext.Countries.ToList();
-        ViewBag.Countries = countries;
-        
-        if (ModelState.IsValid)
-        {
-            _applicationDbContext.Entry(model).State = EntityState.Modified;
-            _applicationDbContext.SaveChanges();
-            return RedirectToAction("Index");
-        }
-        return View(model);
-    }
 
-    public ActionResult Delete(int? ID)
-    {
-        GetGender();
-        List<Models.CountryModel>? countries = _applicationDbContext.Countries.ToList();
-        ViewBag.Countries = countries;
-        
-        if (ID == null)
-        {
-            return Problem("Entity set is null.");
-        }
-
-        var data = _applicationDbContext.Users.Find(ID);
-
-        if (data == null)
+        var data = await _applicationDbContext.Users.AsNoTracking().FirstOrDefaultAsync(x => x.ID == ID);
+        if (data is null)
         {
             return NotFound();
         }
+        GetGender();
+        List<Models.CountryModel>? countries = _applicationDbContext.Countries.ToList();
+        ViewBag.Countries = countries;
 
-        return View(data);
+        try
+        {
+            if (ModelState.IsValid)
+            {
+                _applicationDbContext.Update(model);
+                await _applicationDbContext.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            model.Country = data.Country;
+            model.Gender = data.Gender;
+            
+            return View("Edit", model);
+        }
+        catch (System.Exception exception)
+        {
+            ModelState.AddModelError("UserName", exception.Message);
+            return View("Edit", model);
+        }
+
+
+
+        //  try
+        //  {
+        //     if (ModelState.IsValid)
+        //     {
+        //         _applicationDbContext.Update(model);
+        //         await _applicationDbContext.SaveChangesAsync();
+        //         return RedirectToAction("Index");
+        //      }
+        //  }
+        //  catch (System.Exception)
+        //  {
+        //     throw;
+        //  }
+        //  return RedirectToAction("Index");
+
+
+        // if(ID != model.ID)
+        // {
+        //     return BadRequest();
+        // }
+        // _applicationDbContext.Entry(model).State = EntityState.Modified;
+
+        // try
+        // {
+        //     await _applicationDbContext.SaveChangesAsync();
+        // }
+        // catch (DbUpdateConcurrencyException)
+        // {
+        //     throw;
+        // }
+        // return AcceptedAtAction("Index", new {ID = model.ID, 
+        //                                         FirstName = model.FirstName, 
+        //                                         LastName = model.LastName,
+        //                                         GenderID = model.GenderID,
+        //                                         CountryID = model.CountryID,
+        //                                         UserName = model.UserName,
+        //                                         Telephone = model.Telephone,
+        //                                         Email = model.Email }, model);
+
+
+
+
+        // if (ModelState.IsValid)
+        // {
+        //     return View(model);
+        // }
+
+        // _applicationDbContext.Update(model);
+        // await _applicationDbContext.SaveChangesAsync();
+        // return AcceptedAtAction("Index",  new {ID = model.ID, 
+        //                                  FirstName = model.FirstName, 
+        //                                  LastName = model.LastName,
+        //                                  GenderID = model.GenderID,
+        //                                  CountryID = model.CountryID,
+        //                                  UserName = model.UserName,
+        //                                 Telephone = model.Telephone,
+        //                                  Email = model.Email}, model);
     }
 
-    /*
-    [HttpPost, ActionName("Delete")]
-    [ValidateAntiForgeryToken]
-
-    public ActionResult DeleteConfirmed (int ID)
+    [HttpDelete]
+    public ActionResult Delete(int ID)
     {
-       var data = _applicationDbContext.Users.Find(ID);
-            _applicationDbContext.Users.Remove(data);
-            _applicationDbContext.SaveChanges();
-            return RedirectToAction("Index");
+        var data = _applicationDbContext.Users.Include(x => x.Country).FirstOrDefault(x => x.ID == ID);
+        _applicationDbContext.Users.Remove(data);
+        _applicationDbContext.SaveChanges();
+        return NoContent();
     }
-    */
+
 
 
     public void GetGender()

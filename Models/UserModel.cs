@@ -14,7 +14,7 @@ public class UserModel
     public string? Telephone { get; set; }
     public string? Email { get; set; }
 
-    public virtual CountryModel Country { get; set; }
+    public virtual CountryModel? Country { get; set; }
 
-    public virtual GenderModel Gender {get; set;}
+    public virtual GenderModel? Gender { get; set; }
 }

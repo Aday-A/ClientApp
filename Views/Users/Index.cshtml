@@ -60,12 +60,11 @@
                                     asp-action="Edit" asp-route-id="@item.ID"></a>
                                 @* <!-- Button trigger modal --> *@
                                 <button type="button" class="fa-regular fa-trash-can"
-                                    style="color: tomato; border: 0; background: none;" asp-controller="Users"
-                                    asp-action="Delete" asp-route-id="@item.ID" data-bs-toggle="modal"
-                                    data-bs-target="#deleteModal">
+                                    style="color: tomato; border: 0; background: none;"
+                                    onclick="showDeleteConfirmation(@item.ID)">
 
                                 </button>
-                               
+
                                 @* <!-- Modal --> *@
                                 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel"
                                     aria-hidden="true">
@@ -82,8 +81,9 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
                                                     data-bs-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-danger" asp-controller="User" 
-                                                asp-action="DeleteConfirmed">Confirm</button>
+                                                <button type="button" class="btn btn-danger"
+                                                    id="DeleteConfirmedButton">Confirm</button>
+                                                <input type="hidden" id="DeleteUserId">
                                             </div>
                                         </div>
                                     </div>
@@ -98,3 +98,34 @@
     </div>
 
 </div>
+
+@section Scripts {
+    <script>
+        $(function () {
+            $('#DeleteConfirmedButton').click(async function (e) {
+                e.preventDefault();
+
+                const request = await fetch(
+                    'Users/Delete/' + $('#DeleteUserId').val(),
+                    {
+                        method: 'DELETE'
+                    }
+                );
+
+                const statusCode = await request.status;
+                if (statusCode == 204) {
+                    window.location.reload();
+                    return;
+                }
+
+                const response = await request.json();
+                alert(response);
+            });
+
+            window.showDeleteConfirmation = function (userId) {
+                $('#deleteModal').modal('show');
+                $('#DeleteUserId').val(userId);
+            }
+        })
+    </script>
+}
