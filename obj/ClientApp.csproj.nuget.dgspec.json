@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\adesuwaaghahowa\\Documents\\Project 2\\ClientApp\\ClientApp.csproj": {}
+    "C:\\Users\\adesuwaaghahowa\\Documents\\GitHub\\ClientApp\\ClientApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\adesuwaaghahowa\\Documents\\Project 2\\ClientApp\\ClientApp.csproj": {
+    "C:\\Users\\adesuwaaghahowa\\Documents\\GitHub\\ClientApp\\ClientApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\adesuwaaghahowa\\Documents\\Project 2\\ClientApp\\ClientApp.csproj",
+        "projectUniqueName": "C:\\Users\\adesuwaaghahowa\\Documents\\GitHub\\ClientApp\\ClientApp.csproj",
         "projectName": "ClientApp",
-        "projectPath": "C:\\Users\\adesuwaaghahowa\\Documents\\Project 2\\ClientApp\\ClientApp.csproj",
+        "projectPath": "C:\\Users\\adesuwaaghahowa\\Documents\\GitHub\\ClientApp\\ClientApp.csproj",
         "packagesPath": "C:\\Users\\adesuwaaghahowa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\adesuwaaghahowa\\Documents\\Project 2\\ClientApp\\obj\\",
+        "outputPath": "C:\\Users\\adesuwaaghahowa\\Documents\\GitHub\\ClientApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\adesuwaaghahowa\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -104,7 +104,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
